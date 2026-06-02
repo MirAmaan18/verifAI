@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient: Deep dark surface with a subtle central red glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#1f1111" />
+      <stop offset="50%" stop-color="#0e0b0b" />
+      <stop offset="100%" stop-color="#050404" />
+    </radialGradient>
+    
+    <!-- Red Brand Gradient -->
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+
+    <!-- White/Silver Metallic Gradient -->
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d1c9c2" />
+    </linearGradient>
+
+    <!-- Gold Accent Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Base with premium border styling -->
+  <rect x="20" y="20" width="472" height="472" rx="120" fill="url(#bgGlow)" stroke="#dc2626" stroke-width="12" />
+  
+  <!-- Subtle inner shadow ring -->
+  <rect x="32" y="32" width="448" height="448" rx="108" fill="none" stroke="#3a2020" stroke-width="4" opacity="0.6" />
+
+  <!-- Shield overlay watermark in the background (subtle, opacity 0.12) -->
+  <path d="M256 75 L396 120 V255 C396 350 320 405 256 435 C192 405 116 350 116 255 V120 Z" fill="none" stroke="#dc2626" stroke-width="6" opacity="0.12" />
+
+  <!-- Big Stylized "V" Monogram representing Verif (White/Silver) and FAI (Red Checkmark) -->
+  <!-- Left leg of V (Silver/White) -->
+  <path d="M120 200 L205 345" fill="none" stroke="url(#silverGrad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Right leg of V / Checkmark (Red) -->
+  <path d="M205 345 L300 180" fill="none" stroke="url(#redGrad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- A: Left leg, Right leg, Crossbar -->
+  <path d="M330 345 L365 225 L400 345" fill="none" stroke="url(#silverGrad)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M344 300 H386" fill="none" stroke="url(#silverGrad)" stroke-width="16" stroke-linecap="round" />
+
+  <!-- i: Stem -->
+  <path d="M435 265 V345" fill="none" stroke="url(#redGrad)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- i: Sparkle Dot (Gold Accent) -->
+  <path d="M435 200 Q435 215 450 215 Q435 215 435 230 Q435 215 420 215 Q435 215 435 200 Z" fill="url(#goldGrad)" />
+</svg>
