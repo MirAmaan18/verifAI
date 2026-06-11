@@ -69,18 +69,21 @@ Analyze the following news text and determine if it is REAL, FAKE, or UNCERTAIN.
 Respond ONLY with a valid JSON object — no markdown, no extra text, nothing else.
 
 Format:
-{"verdict":"REAL|FAKE|UNCERTAIN","confidence":0.0-1.0,"real_score":0.0-1.0,"fake_score":0.0-1.0,"summary":"1-2 sentence explanation","signals":["signal1","signal2","signal3"],"red_flags":["flag1","flag2"],"bias":"left|center|right|unknown","emotional_tone":0.0-1.0,"language":"ISO-639-1 code e.g. en","suspicious_phrases":["phrase1","phrase2"]}
+{"verdict":"REAL|FAKE|UNCERTAIN","confidence":0.0-1.0,"real_score":0.0-1.0,"fake_score":0.0-1.0,"credibility_score":1-10,"summary":"1-2 sentence explanation","signals":["signal1","signal2","signal3"],"red_flags":["flag1","flag2"],"bias":"left|center|right|unknown","emotional_tone":0.0-1.0,"language":"ISO-639-1 code e.g. en","suspicious_phrases":["phrase1","phrase2"],"category":"Politics|Health|Science|Technology|Business|Sports|Entertainment|Crime|Environment|Other","detected_source":"domain or outlet name if determinable from text, else null"}
 
 Rules:
 - verdict must be exactly "REAL", "FAKE", or "UNCERTAIN"
 - Use "UNCERTAIN" when confidence is below 0.65 or the claim cannot be verified
 - confidence: 0.5 = very unsure, 1.0 = certain
 - real_score + fake_score must equal 1.0
+- credibility_score: integer 1-10 (1=completely fabricated/unreliable, 5=uncertain/mixed, 10=fully verified/highly credible)
 - red_flags must be [] if verdict is REAL
 - suspicious_phrases: up to 5 verbatim phrases from the text that are misleading or emotionally manipulative (empty [] if REAL)
 - emotional_tone: 0.0 = completely neutral/factual, 1.0 = extremely sensationalist/emotionally manipulative
 - bias: political leaning of the content ("left", "center", "right", or "unknown")
 - language: ISO 639-1 code of the language the article is written in
+- category: topic/domain of the article from the allowed values
+- detected_source: if a news outlet, publication, or domain is mentioned or strongly implied in the text, return its domain or name; otherwise null
 
 News text to analyze:
 "${userText}"`;
